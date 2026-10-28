@@ -1,0 +1,51 @@
+:root {
+  color-scheme: light;
+}
+
+.page-background {
+  background-image:
+    radial-gradient(ellipse at 9% 12%, #f1e9d8 0, transparent 30rem),
+    radial-gradient(ellipse at 94% 88%, #e2eee3 0, transparent 32rem);
+}
+
+.bubble {
+  overflow-wrap: anywhere;
+}
+
+.animate-chat-appear {
+  animation: chat-appear .2s ease-out;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #89978a;
+  animation: chat-pulse 1s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: .15s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: .3s;
+}
+
+@keyframes chat-pulse {
+  0%, 60%, 100% { transform: translateY(0); opacity: .5; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+@keyframes chat-appear {
+  from { transform: translateY(4px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
